@@ -3,7 +3,7 @@ $conn = mysqli_connect(
     "localhost", 
     "root",
     "",
-    "kedaiku_db"
+    "resto"
 );
 
 if (!$conn) {

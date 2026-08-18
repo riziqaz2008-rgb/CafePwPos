@@ -1,3 +1,4 @@
+
 <section id="Karyawan">
 
     <div
@@ -33,12 +34,6 @@
 
                             </h1>
 
-                            <span class="text-sm font-bold text-blue-600 dark:text-blue-400">
-
-                                ( 8 )
-
-                            </span>
-
                         </div>
 
                         <p class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1">
@@ -69,7 +64,7 @@
         </div>
 
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-7">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-7">
 
             <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-5">
 
@@ -83,13 +78,13 @@
 
                     <div>
 
-                        <p class="text-xs uppercase tracking-wider font-black text-blue-600 dark:text-blue-400">
+                        <p class="text-xs uppercase tracking-wider font-black text-slate-900 dark:text-blue-400">
 
                             Total Karyawan
 
                         </p>
 
-                        <h2 class="text-3xl font-black text-slate-900 dark:text-white mt-1">
+                        <h2 class="text-3xl font-black text-blue-600 dark:text-white mt-1">
 
                             8
 
@@ -114,46 +109,15 @@
 
                     <div>
 
-                        <p class="text-xs uppercase tracking-wider font-black text-blue-600 dark:text-blue-400">
+                        <p class="text-xs uppercase tracking-wider font-black text-slate-900 dark:text-blue-400">
 
-                            Aktif
+                            Karyawan Aktif
 
                         </p>
 
-                        <h2 class="text-3xl font-black text-slate-900 dark:text-white mt-1">
+                        <h2 class="text-3xl font-black text-blue-600 dark:text-white mt-1">
 
                             7
-
-                        </h2>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-5">
-
-                <div class="flex items-center gap-4">
-
-                    <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center shrink-0">
-
-                        <i class="bx bx-shield-quarter text-2xl text-white"></i>
-
-                    </div>
-
-                    <div>
-
-                        <p class="text-xs uppercase tracking-wider font-black text-blue-600 dark:text-blue-400">
-
-                            Role
-
-                        </p>
-
-                        <h2 class="text-3xl font-black text-slate-900 dark:text-white mt-1">
-
-                            3
 
                         </h2>
 
@@ -166,7 +130,7 @@
         </div>
 
 
-        <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-5 mb-6">
+        <div class="sticky top-10 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-5 mb-6">
 
             <div class="flex flex-col lg:flex-row gap-3">
 
@@ -186,7 +150,7 @@
 
                 <select
                     x-model="filterRole"
-                    class="w-full lg:w-48 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:border-primary"
+                    class="w-full lg:w-48 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 >
 
                     <option value="Semua">Semua Role</option>
@@ -202,7 +166,7 @@
 
                 <select
                     x-model="filterStatus"
-                    class="w-full lg:w-44 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:border-primary"
+                    class="w-full lg:w-44 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 >
 
                     <option value="Semua">Semua Status</option>
@@ -240,605 +204,219 @@
 
         </div>
 
+        <table
+            id="selection-table"
+            class="w-full min-w-[950px] text-sm mt-3 border border-gray-200 dark:border-slate-800 rounded-2xl overflow-hidden"
+        >
 
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+            <thead>
 
+                <tr class="dark:bg-slate-900 text-gray-400 border-b border-gray-200 dark:border-slate-800">
 
-            <div
-                x-show="('Budi Santoso Administrator Aktif'.toLowerCase().includes(search.toLowerCase())) && (filterRole === 'Semua' || filterRole === 'Administrator') && (filterStatus === 'Semua' || filterStatus === 'Aktif')"
-                class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6"
-            >
+                    <th class="text-center font-medium px-5 py-4 border-r border-gray-200 dark:border-slate-800">
+                        #
+                    </th>
 
-                <div class="flex items-start justify-between gap-4">
+                    <th class="text-center font-medium px-5 py-4 border-r border-gray-200 dark:border-slate-800">
+                        Nama
+                    </th>
 
-                    <div class="flex items-center gap-4 min-w-0">
+                    <th class="text-center font-medium px-5 py-4 border-r border-gray-200 dark:border-slate-800">
+                        Username
+                    </th>
 
-                        <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-lg shrink-0">
+                    <th class="text-center font-medium px-5 py-4 border-r border-gray-200 dark:border-slate-800">
+                        No Telpon
+                    </th>
 
-                            BS
+                    <th class="text-center font-medium px-5 py-4 border-r border-gray-200 dark:border-slate-800">
+                        Role
+                    </th>
 
-                        </div>
+                    <th class="text-center font-medium px-5 py-4 border-r border-gray-200 dark:border-slate-800">
+                        Status
+                    </th>
 
-                        <div class="min-w-0">
+                    <th class="text-center font-medium px-5 py-4">
+                        Aksi
+                    </th>
 
-                            <h3 class="text-base font-black text-slate-900 dark:text-white truncate">
+                </tr>
 
-                                Budi Santoso
+            </thead>
 
-                            </h3>
+            <tbody id="body-tabel-karyawan">
 
-                            <p class="text-xs text-blue-600 dark:text-blue-400 font-bold mt-1">
+                <?php if (!empty($data_karyawan)): ?>
 
-                                Administrator
+                    <?php $no = 1; ?>
 
-                            </p>
+                    <?php foreach ($data_ as $karyawan): ?>
 
-                        </div>
+                        <tr class="text-center bg-white dark:bg-slate-950 border-b border-gray-200 dark:border-slate-800 hover:bg-gray-50/60 dark:hover:bg-slate-900/50 transition">
 
-                    </div>
+                            <td class="px-5 py-4 border-r border-gray-200 dark:border-slate-800">
 
+                                <div class="font-semibold text-gray-900 dark:text-slate-200">
+                                    <?= $no++ ?>
+                                </div>
 
-                    <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-white text-[10px] font-black shrink-0">
+                            </td>
 
-                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                            <td class="px-5 py-4 border-r border-gray-200 dark:border-slate-800">
 
-                        Aktif
+                                <div class="w-full flex justify-center">
 
-                    </span>
+                                    <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
 
-                </div>
+                                        <?php
+                                        $namaGambar = trim($karyawan['gambar_karyawan']);
+                                        $imagePath = __DIR__ . '/../../../../assets/images/products/' . $namaGambar;
+                                        $imageUrl = '/assets/images/products/' . $namaGambar;
+                                        ?>
 
+                                        <?php if (!empty($namaGambar) && file_exists($imagePath)): ?>
 
-                <div class="mt-6 space-y-3">
+                                            <a
+                                                href="<?= htmlspecialchars($imageUrl) ?>"
+                                                target="_blank"
+                                                class="block w-full h-full"
+                                            >
 
-                    <div class="flex items-center gap-3 text-sm">
+                                                <img
+                                                    src="<?= htmlspecialchars($imageUrl) ?>"
+                                                    loading="lazy"
+                                                    class="w-full h-full object-cover hover:scale-110 transition duration-300"
+                                                    alt="<?= htmlspecialchars($karyawan['nama_karyawan']) ?>"
+                                                >
 
-                        <i class="bx bx-envelope text-lg text-gray-400"></i>
+                                            </a>
 
-                        <span class="text-gray-600 dark:text-slate-300 font-medium truncate">
+                                        <?php else: ?>
 
-                            budi@kedaiku.id
+                                            <div class="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-slate-800">
 
-                        </span>
+                                                <i class="bx bx-image text-xl text-gray-400"></i>
 
-                    </div>
+                                            </div>
 
-                    <div class="flex items-center gap-3 text-sm">
+                                        <?php endif; ?>
 
-                        <i class="bx bx-phone text-lg text-gray-400"></i>
+                                    </div>
 
-                        <span class="text-gray-600 dark:text-slate-300 font-medium">
+                                </div>
 
-                            0812-3456-7890
+                            </td>
 
-                        </span>
+                            <td class="px-5 py-4 border-r border-gray-200 dark:border-slate-800">
 
-                    </div>
+                                <div class="flex justify-center items-center gap-2 px-2">
 
-                </div>
+                                    <span class="text-sm font-bold text-center text-gray-800 dark:text-slate-200 line-clamp-2 leading-snug">
+                                        <?= htmlspecialchars($karyawan['nama_karyawan']) ?>
+                                    </span>
 
+                                </div>
 
-                <div class="flex items-center justify-between mt-6 pt-5 border-t border-gray-200 dark:border-slate-800">
+                            </td>
 
-                    <span class="text-xs font-bold text-gray-400">
+                            <td class="px-5 py-4 border-r border-gray-200 dark:border-slate-800">
 
-                        Bergabung 12 Jan 2026
+                                <div class="inline-flex items-center gap-2 font-semibold text-gray-700 dark:text-slate-200">
 
-                    </span>
+                                    <div class="flex items-center gap-2 px-6 py-2 rounded-lg dark:bg-slate-900">
 
-                    <button
-                        type="button"
-                        @click="karyawanDetail = 'Budi Santoso'; DetailKaryawan = true"
-                        class="flex items-center gap-2 text-sm font-black text-blue-600 hover:text-blue-700 transition"
-                    >
+                                        <span class="w-2 h-2 rounded-full bg-primary"></span>
 
-                        <span>Detail</span>
+                                        <div class="text-primary whitespace-nowrap">
+                                            <?= htmlspecialchars($karyawan['kategori_karyawan']) ?>
+                                        </div>
 
-                        <i class="bx bx-right-arrow-alt text-lg"></i>
+                                    </div>
 
-                    </button>
+                                </div>
 
-                </div>
+                            </td>
 
-            </div>
+                            
+                            <td class="px-5 py-4 border-r border-gray-200 dark:border-slate-800">
+                                
+                                <span class="text-slate-900 dark:text-slate-200 font-medium whitespace-nowrap">
+                                    Rp <?= number_format($karyawan['harga_karyawan'], 0, ',', '.') ?>
+                                </span>
+                                
+                            </td>
+                            
+                            <td class="px-5 py-4 border-r border-gray-200 dark:border-slate-800">
 
+                                <div class="inline-flex items-center gap-2 font-semibold text-gray-700 dark:text-slate-200">
 
-            <div
-                x-show="('Siti Aminah Kasir Aktif'.toLowerCase().includes(search.toLowerCase())) && (filterRole === 'Semua' || filterRole === 'Kasir') && (filterStatus === 'Semua' || filterStatus === 'Aktif')"
-                class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6"
-            >
+                                    <div class="flex items-center gap-2 px-6 py-2 rounded-lg bg-primary dark:bg-slate-900">
 
-                <div class="flex items-start justify-between gap-4">
+                                        <div class="text-white whitespace-nowrap">
+                                            Aktif
+                                        </div>
 
-                    <div class="flex items-center gap-4 min-w-0">
+                                    </div>
 
-                        <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-lg shrink-0">
+                                </div>
 
-                            SA
+                            </td>
 
-                        </div>
+                            <td class="px-5 py-4">
 
-                        <div class="min-w-0">
+                                <div class="flex justify-center items-center gap-2 shrink-0">
 
-                            <h3 class="text-base font-black text-slate-900 dark:text-white truncate">
+                                    <a
+                                        href="edit.php?id=<?= $karyawan['id'] ?? '' ?>"
+                                        class="flex items-center justify-center p-3 bg-primary text-white rounded-xl hover:opacity-85 active:scale-95 transition"
+                                        title="Edit Data"
+                                    >
+                                        <i class="bx bxs-pencil text-xl"></i>
+                                    </a>
 
-                                Siti Aminah
+                                    <button
+                                        type="button"
+                                        class="flex items-center justify-center p-3 bg-red-500 text-white rounded-xl hover:opacity-85 active:scale-95 transition"
+                                        title="Hapus Data"
+                                    >
+                                        <i class="bx bxs-trash text-xl"></i>
+                                    </button>
 
-                            </h3>
+                                </div>
 
-                            <p class="text-xs text-blue-600 dark:text-blue-400 font-bold mt-1">
+                            </td>
 
-                                Kasir
+                        </tr>
 
-                            </p>
+                    <?php endforeach; ?>
 
-                        </div>
+                <?php else: ?>
 
-                    </div>
+                    <tr>
 
+                        <td colspan="7">
 
-                    <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-white text-[10px] font-black shrink-0">
+                            <div class="w-full flex flex-col justify-center items-center gap-y-3 p-20 text-gray-500/80">
 
-                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                                <i class="bx bx-user-id-card text-7xl"></i>
 
-                        Aktif
+                                <h1 class="font-black">
+                                    Belum ada data karyawan
+                                </h1>
 
-                    </span>
+                            </div>
 
-                </div>
+                        </td>
 
+                    </tr>
 
-                <div class="mt-6 space-y-3">
+                <?php endif; ?>
 
-                    <div class="flex items-center gap-3 text-sm">
+            </tbody>
 
-                        <i class="bx bx-envelope text-lg text-gray-400"></i>
+        </table>
 
-                        <span class="text-gray-600 dark:text-slate-300 font-medium truncate">
-
-                            siti@kedaiku.id
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-phone text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium">
-
-                            0813-4567-8901
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="flex items-center justify-between mt-6 pt-5 border-t border-gray-200 dark:border-slate-800">
-
-                    <span class="text-xs font-bold text-gray-400">
-
-                        Bergabung 18 Feb 2026
-
-                    </span>
-
-                    <button
-                        type="button"
-                        @click="karyawanDetail = 'Siti Aminah'; DetailKaryawan = true"
-                        class="flex items-center gap-2 text-sm font-black text-blue-600 hover:text-blue-700 transition"
-                    >
-
-                        <span>Detail</span>
-
-                        <i class="bx bx-right-arrow-alt text-lg"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div
-                x-show="('Andi Pratama Kasir Aktif'.toLowerCase().includes(search.toLowerCase())) && (filterRole === 'Semua' || filterRole === 'Kasir') && (filterStatus === 'Semua' || filterStatus === 'Aktif')"
-                class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6"
-            >
-
-                <div class="flex items-start justify-between gap-4">
-
-                    <div class="flex items-center gap-4 min-w-0">
-
-                        <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-lg shrink-0">
-
-                            AP
-
-                        </div>
-
-                        <div class="min-w-0">
-
-                            <h3 class="text-base font-black text-slate-900 dark:text-white truncate">
-
-                                Andi Pratama
-
-                            </h3>
-
-                            <p class="text-xs text-blue-600 dark:text-blue-400 font-bold mt-1">
-
-                                Kasir
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-white text-[10px] font-black shrink-0">
-
-                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-
-                        Aktif
-
-                    </span>
-
-                </div>
-
-
-                <div class="mt-6 space-y-3">
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-envelope text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium truncate">
-
-                            andi@kedaiku.id
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-phone text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium">
-
-                            0821-5678-9012
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="flex items-center justify-between mt-6 pt-5 border-t border-gray-200 dark:border-slate-800">
-
-                    <span class="text-xs font-bold text-gray-400">
-
-                        Bergabung 05 Mar 2026
-
-                    </span>
-
-                    <button
-                        type="button"
-                        @click="karyawanDetail = 'Andi Pratama'; DetailKaryawan = true"
-                        class="flex items-center gap-2 text-sm font-black text-blue-600 hover:text-blue-700 transition"
-                    >
-
-                        <span>Detail</span>
-
-                        <i class="bx bx-right-arrow-alt text-lg"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div
-                x-show="('Rina Wulandari Staff Aktif'.toLowerCase().includes(search.toLowerCase())) && (filterRole === 'Semua' || filterRole === 'Staff') && (filterStatus === 'Semua' || filterStatus === 'Aktif')"
-                class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6"
-            >
-
-                <div class="flex items-start justify-between gap-4">
-
-                    <div class="flex items-center gap-4 min-w-0">
-
-                        <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-lg shrink-0">
-
-                            RW
-
-                        </div>
-
-                        <div class="min-w-0">
-
-                            <h3 class="text-base font-black text-slate-900 dark:text-white truncate">
-
-                                Rina Wulandari
-
-                            </h3>
-
-                            <p class="text-xs text-blue-600 dark:text-blue-400 font-bold mt-1">
-
-                                Staff
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-white text-[10px] font-black shrink-0">
-
-                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-
-                        Aktif
-
-                    </span>
-
-                </div>
-
-
-                <div class="mt-6 space-y-3">
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-envelope text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium truncate">
-
-                            rina@kedaiku.id
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-phone text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium">
-
-                            0822-6789-0123
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="flex items-center justify-between mt-6 pt-5 border-t border-gray-200 dark:border-slate-800">
-
-                    <span class="text-xs font-bold text-gray-400">
-
-                        Bergabung 22 Apr 2026
-
-                    </span>
-
-                    <button
-                        type="button"
-                        @click="karyawanDetail = 'Rina Wulandari'; DetailKaryawan = true"
-                        class="flex items-center gap-2 text-sm font-black text-blue-600 hover:text-blue-700 transition"
-                    >
-
-                        <span>Detail</span>
-
-                        <i class="bx bx-right-arrow-alt text-lg"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div
-                x-show="('Dedi Setiawan Staff Aktif'.toLowerCase().includes(search.toLowerCase())) && (filterRole === 'Semua' || filterRole === 'Staff') && (filterStatus === 'Semua' || filterStatus === 'Aktif')"
-                class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6"
-            >
-
-                <div class="flex items-start justify-between gap-4">
-
-                    <div class="flex items-center gap-4 min-w-0">
-
-                        <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-lg shrink-0">
-
-                            DS
-
-                        </div>
-
-                        <div class="min-w-0">
-
-                            <h3 class="text-base font-black text-slate-900 dark:text-white truncate">
-
-                                Dedi Setiawan
-
-                            </h3>
-
-                            <p class="text-xs text-blue-600 dark:text-blue-400 font-bold mt-1">
-
-                                Staff
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-white text-[10px] font-black shrink-0">
-
-                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-
-                        Aktif
-
-                    </span>
-
-                </div>
-
-
-                <div class="mt-6 space-y-3">
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-envelope text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium truncate">
-
-                            dedi@kedaiku.id
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-phone text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium">
-
-                            0851-7890-1234
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="flex items-center justify-between mt-6 pt-5 border-t border-gray-200 dark:border-slate-800">
-
-                    <span class="text-xs font-bold text-gray-400">
-
-                        Bergabung 10 Mei 2026
-
-                    </span>
-
-                    <button
-                        type="button"
-                        @click="karyawanDetail = 'Dedi Setiawan'; DetailKaryawan = true"
-                        class="flex items-center gap-2 text-sm font-black text-blue-600 hover:text-blue-700 transition"
-                    >
-
-                        <span>Detail</span>
-
-                        <i class="bx bx-right-arrow-alt text-lg"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div
-                x-show="('Maya Lestari Kasir Aktif'.toLowerCase().includes(search.toLowerCase())) && (filterRole === 'Semua' || filterRole === 'Kasir') && (filterStatus === 'Semua' || filterStatus === 'Aktif')"
-                class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6"
-            >
-
-                <div class="flex items-start justify-between gap-4">
-
-                    <div class="flex items-center gap-4 min-w-0">
-
-                        <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-lg shrink-0">
-
-                            ML
-
-                        </div>
-
-                        <div class="min-w-0">
-
-                            <h3 class="text-base font-black text-slate-900 dark:text-white truncate">
-
-                                Maya Lestari
-
-                            </h3>
-
-                            <p class="text-xs text-blue-600 dark:text-blue-400 font-bold mt-1">
-
-                                Kasir
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-white text-[10px] font-black shrink-0">
-
-                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-
-                        Aktif
-
-                    </span>
-
-                </div>
-
-
-                <div class="mt-6 space-y-3">
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-envelope text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium truncate">
-
-                            maya@kedaiku.id
-
-                        </span>
-
-                    </div>
-
-                    <div class="flex items-center gap-3 text-sm">
-
-                        <i class="bx bx-phone text-lg text-gray-400"></i>
-
-                        <span class="text-gray-600 dark:text-slate-300 font-medium">
-
-                            0852-8901-2345
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="flex items-center justify-between mt-6 pt-5 border-t border-gray-200 dark:border-slate-800">
-
-                    <span class="text-xs font-bold text-gray-400">
-
-                        Bergabung 17 Jun 2026
-
-                    </span>
-
-                    <button
-                        type="button"
-                        @click="karyawanDetail = 'Maya Lestari'; DetailKaryawan = true"
-                        class="flex items-center gap-2 text-sm font-black text-blue-600 hover:text-blue-700 transition"
-                    >
-
-                        <span>Detail</span>
-
-                        <i class="bx bx-right-arrow-alt text-lg"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-
-        </div>
 
 
         <div
@@ -884,7 +462,7 @@
 
                                 <p class="text-sm text-gray-400 mt-1">
 
-                                    Tambahkan karyawan baru ke sistem.
+                                    Tambahkan data karyawan ke sistem.
 
                                 </p>
 
@@ -896,7 +474,7 @@
                         <button
                             type="button"
                             @click="TambahKaryawan = false"
-                            class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center hover:bg-blue-700 transition"
+                            class="w-10 h-10 rounded-xl bg-gray-100 text-slate-700 flex items-center justify-center hover:text-white hover:bg-blue-700 transition"
                         >
 
                             <i class="bx bx-x text-xl"></i>
@@ -910,11 +488,24 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-                            <div class="md:col-span-2">
+                        
+                            <div class="flex flex-col border-b border-gray-200 col-span-2 py-2">
+
+                                <label class="text-xs text-center font-black uppercase tracking-wide text-black dark:text-gray-400 ml-1">
+
+                                    Data Diri
+
+                                </label>
+    
+                            </div>
+
+                            
+
+                            <div>
 
                                 <label class="text-xs font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1">
 
-                                    Nama Lengkap
+                                    Nama Lengkap <span class="text-red-600">*</span>
 
                                 </label>
 
@@ -925,30 +516,12 @@
                                 >
 
                             </div>
-
-
+                        
                             <div>
 
                                 <label class="text-xs font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1">
 
-                                    Username
-
-                                </label>
-
-                                <input
-                                    type="text"
-                                    placeholder="Contoh: budi.santoso"
-                                    class="w-full mt-1.5 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-medium rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                                >
-
-                            </div>
-
-
-                            <div>
-
-                                <label class="text-xs font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1">
-
-                                    No. Telepon
+                                    No. Telepon <span class="text-red-600">*</span>
 
                                 </label>
 
@@ -960,56 +533,79 @@
 
                             </div>
 
-
                             <div>
 
                                 <label class="text-xs font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1">
 
-                                    Role
+                                    Role <span class="text-red-600">*</span>
 
                                 </label>
 
                                 <select
-                                    class="w-full mt-1.5 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:border-primary"
+                                    class="w-full mt-1.5 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary"
                                 >
 
-                                    <option>Administrator</option>
-
-                                    <option>Kasir</option>
-
-                                    <option>Staff</option>
+                                    <option value="">Pilih role</option>
+                                    
+                                    <?php foreach($role as $d): ?>
+                                        <option value="<?= $d['id_role'] ?>"><?= $d['nama_role'] ?></option>
+                                    <?php endforeach; ?>
 
                                 </select>
 
                             </div>
 
-
                             <div>
-
                                 <label class="text-xs font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1">
 
-                                    Status
+                                    Status <span class="text-red-600">*</span>
 
                                 </label>
 
-                                <select
-                                    class="w-full mt-1.5 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:border-primary"
-                                >
+                                <div>
 
-                                    <option>Aktif</option>
+                                    <label class="text-xs flex justify-start items-center gap-2 rounded-xl p-2.5 mt-2 border border-gray-200 font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1" for="status">
+                                        <label class="inline-flex justify-between items-center cursor-pointer">
+                                            <input type="checkbox" value="" class="sr-only peer" id="status" checkeed>
+                                            <div class="relative w-10.5 h-6 bg-gray-200 dark:peer-focus:ring-primary rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[4px] after:start-[5px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                        Aktif 
+                                    </label>
 
-                                    <option>Nonaktif</option>
-
-                                </select>
-
+                                </div>
                             </div>
+                            
+                            <div class="flex flex-col border-b border-gray-200 col-span-2 mt-4 py-2">
 
+                                <label class="text-xs text-center font-black uppercase tracking-wide text-black dark:text-gray-400 ml-1">
+
+                                    Data Akun
+
+                                </label>
+    
+                            </div>                        
 
                             <div>
 
                                 <label class="text-xs font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1">
 
-                                    Password
+                                    Username <span class="text-red-600">*</span>
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Contoh: budi.santoso"
+                                    class="w-full mt-1.5 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-medium rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                                >
+
+                            </div>
+
+                            <div>
+
+                                <label class="text-xs font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1 col-span-2">
+
+                                    Password <span class="text-red-600">*</span>
 
                                 </label>
 
@@ -1021,22 +617,6 @@
 
                             </div>
 
-
-                            <div>
-
-                                <label class="text-xs font-black uppercase tracking-wide text-gray-600 dark:text-gray-400 ml-1">
-
-                                    Konfirmasi Password
-
-                                </label>
-
-                                <input
-                                    type="password"
-                                    placeholder="Ulangi password"
-                                    class="w-full mt-1.5 px-4 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-medium rounded-xl border border-gray-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-                                >
-
-                            </div>
 
                         </div>
 

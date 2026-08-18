@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../../routes/web.php';
+require_once __DIR__ . '/../../../app/controllers/GlobalController.php';
 ob_start();
 include $page;
 $content = ob_get_clean();
